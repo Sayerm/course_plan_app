@@ -19,7 +19,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".Activities.AddSemester"></activity>
+        <activity android:name=".Activities.FilterResource"></activity>
+        <activity android:name=".Activities.AddSemester" />
         <activity android:name=".Activities.StudentLogin" />
         <activity android:name=".Activities.ConversationActivity" />
         <activity

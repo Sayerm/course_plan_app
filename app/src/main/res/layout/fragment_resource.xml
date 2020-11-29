@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/srl"
     tools:context=".Fragments.ResourceFragment">
 
@@ -138,9 +137,17 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/exploreBySubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Explore by Subject" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <HorizontalScrollView
                     android:visibility="gone"
                     android:id="@+id/buttonView"

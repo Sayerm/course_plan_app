@@ -35,6 +35,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.coursePlan.Activities.FilterResource;
 import com.example.coursePlan.Adapters.ResourceListAdapter;
 import com.example.coursePlan.Models.ResourceModel;
 import com.example.coursePlan.R;
@@ -76,6 +77,7 @@ public class ResourceFragment extends Fragment {
     SwipeRefreshLayout swipeRefreshLayout;
     String postKey;
     String type;
+    Button exploreBySubject;
     String semester, semester2, subject;
     int semesterInt = 0;
     int semesterInt2 = 0;
@@ -215,8 +217,7 @@ public class ResourceFragment extends Fragment {
             }
         });
 
-
-
+        exploreBySubject = view.findViewById(R.id.exploreBySubject);
         uploadFile = view.findViewById(R.id.uploadFile);
         chooseFile = view.findViewById(R.id.chooseFile);
         upVisBt = view.findViewById(R.id.upBt);
@@ -231,6 +232,15 @@ public class ResourceFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         swipeRefreshLayout = view.findViewById(R.id.srl);
         subjectSpinner = view.findViewById(R.id.subjectSpinner);
+
+        exploreBySubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), FilterResource.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
 
         semesterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.example.coursePlan.DialogFragment.ForgotPasswordDialogue;
 import com.example.coursePlan.Fragments.LoginFragment;
@@ -90,11 +89,11 @@ public class LoginActivity extends AppCompatActivity implements ForgotPasswordDi
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 type=loginTypeSpinner.getSelectedItem().toString();
-                if (type.contains("Student")){
+                if (type.contains("Student")) {
                     getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).addToBackStack(null).replace(R.id.frameLt, studentLoginFragment).commit();
-                }else if (type.contains("Teacher")){
+                } else if (type.contains("Faculty")) {
                     getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).addToBackStack(null).replace(R.id.frameLt, teacherLoginFragment).commit();
-                }else {
+                } else {
                     getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).addToBackStack(null).replace(R.id.frameLt, loginFragment).commit();
                 }
             }

@@ -265,7 +265,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="16dp"
-                    android:onClick="AddUser"
+                    android:onClick="AddSubject"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp">
 
@@ -281,15 +281,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_all_users"
-                            app:tint="@android:color/darker_gray" />
+                            android:src="@drawable/ic_semester" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="Add User"
+                            android:text="Add Subject"
                             android:textColor="@color/blueTextColor"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -307,7 +306,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="16dp"
-                    android:onClick="AddSubject"
+                    android:onClick="logout"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp">
 
@@ -324,7 +323,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_semester" />
+                            android:src="@drawable/ic_log_out" />
 
                         <TextView
                             android:id="@+id/addSemester"
@@ -332,7 +331,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="Add Subject"
+                            android:text="Logout"
                             android:textAlignment="center"
                             android:textColor="@color/blueTextColor"
                             android:textSize="18sp"
@@ -346,6 +345,7 @@
             </GridLayout>
 
         <androidx.cardview.widget.CardView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"

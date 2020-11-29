@@ -236,7 +236,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center|start"
-                            android:hint="Teacher ID"
+                            android:hint="Faculty ID"
                             android:inputType="textCapCharacters"
                             android:maxLines="1"
                             android:id="@+id/teachersId"/>

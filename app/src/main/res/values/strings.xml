@@ -4,7 +4,7 @@
 
     <string-array name="type_entries">
 
-        <item>Teacher</item>
+        <item>Faculty</item>
         <item>Student</item>
         <item>Admin</item>
 

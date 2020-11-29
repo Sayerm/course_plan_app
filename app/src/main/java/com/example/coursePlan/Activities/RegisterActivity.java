@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -44,7 +43,7 @@ import static com.example.coursePlan.Constans.BaseUrl.BASE_URL;
 public class RegisterActivity extends AppCompatActivity {
     TextInputEditText fullNameEt, phoneEt, emailEt, passwordEt, batchEt, studentIdNoEt, semesterIdNoEt,teacherIdEt;
     Spinner userTypeSpinner;
-    String[] type = {"Teacher", "Student"};
+    String[] type = {"Faculty", "Student"};
     String types;
     TextView login;
     LinearLayout batchLayout;
@@ -93,7 +92,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 types = userTypeSpinner.getSelectedItem().toString();
-                if (types.contains("Teacher")) {
+                if (types.contains("Faculty")) {
+                    types = "Teacher";
                     batchLayout.setVisibility(View.GONE);
                     teacherIdLt.setVisibility(View.VISIBLE);
                     batchLayout.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
@@ -196,7 +196,6 @@ public class RegisterActivity extends AppCompatActivity {
                             map.put("online", "false");
                             map.put("status", "Hey there🖐");
 
-
                             firebaseDatabase.setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -206,15 +205,17 @@ public class RegisterActivity extends AppCompatActivity {
                                             @Override
                                             public void onResponse(String response) {
                                                 if (response.equals("{\"response\":\"submitted\"}")) {
+                                                    progressDialog.dismiss();
                                                     Toast.makeText(RegisterActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
                                                 } else {
+                                                    progressDialog.dismiss();
                                                     Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                         }, new Response.ErrorListener() {
                                             @Override
                                             public void onErrorResponse(VolleyError error) {
-
+                                                progressDialog.dismiss();
                                                 Toast.makeText(RegisterActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
 
                                             }
