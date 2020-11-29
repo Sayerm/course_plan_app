@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/colorAccent"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_marginStart="4dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_man"
+            app:civ_border_color="#000FFF"
+            app:civ_border_width="2dp"
+            android:id="@+id/profile_conversation"/>
+
+        <LinearLayout
+            android:weightSum="10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="7"
+                android:layout_height="wrap_content"
+                tools:ignore="NestedWeights">
+
+            <TextView
+                android:id="@+id/displayNameConversation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/lastMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:paddingBottom="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lastActionTimeTV"
+                android:paddingEnd="4dp"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="Just Now"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

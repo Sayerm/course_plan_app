@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "104425119567",
+    "firebase_url": "https://course-plan-app.firebaseio.com",
+    "project_id": "course-plan-app",
+    "storage_bucket": "course-plan-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104425119567:android:9f1f634d710e5ec9b36f3a",
+        "android_client_info": {
+          "package_name": "com.example.coursePlan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104425119567-pqp0658daio9iegjpve8vk3tj5kccd1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAv_trIi7-81r2RhQjqJUoap2s185wuMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104425119567-pqp0658daio9iegjpve8vk3tj5kccd1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

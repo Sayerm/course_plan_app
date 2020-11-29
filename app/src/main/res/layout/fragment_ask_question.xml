@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    tools:context=".Fragments.AskQuestionFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/salsa"
+            android:gravity="center"
+            android:text="Create your question"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4" />
+
+        <LinearLayout
+            android:id="@+id/spinnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginBottom="8dp">
+
+            <Spinner
+                android:spinnerMode="dropdown"
+                android:padding="4dp"
+                android:id="@+id/userType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                tools:targetApi="lollipop"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:textColorHint="@android:color/darker_gray"
+                android:id="@+id/qDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Question description"
+                android:maxLines="5"
+                android:gravity="top"
+                android:minHeight="140dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post Question"
+            android:layout_gravity="center"
+            android:id="@+id/uploadPost"/>
+    </LinearLayout>
+
+
+
+
+
+</FrameLayout>

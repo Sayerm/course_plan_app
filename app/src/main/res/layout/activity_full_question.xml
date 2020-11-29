@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.FullQuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/uploadMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your answer is uploaded. Please swipe or click here to refresh"
+            android:layout_gravity="center"
+            android:gravity="center|start"
+            android:padding="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:background="#D67F7F"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbarStyle="insideInset">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:id="@+id/postProfileImageView"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_weight="2"
+                            android:src="@drawable/ic_man"
+                            app:civ_border_color="@color/colorAccent"
+                            app:civ_border_width="2dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/postProfileName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:gravity="center|start"
+                                    android:text="User name"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                                <ImageView
+                                    android:id="@+id/followButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="13dp"
+                                    android:layout_gravity="center|start"
+                                    android:paddingStart="8dp"
+                                    android:src="@drawable/ic_follow" />
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/postTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginBottom="4dp"
+                                android:gravity="center|start"
+                                android:text="Just now"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/more"
+                            android:layout_width="0dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_more"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/titleTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|start"
+                        android:paddingStart="8dp"
+                        android:text="My question will appear here?"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                    <TextView
+                        android:id="@+id/questionDescriptionTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:maxLines="3"
+                        android:padding="16dp"
+                        android:textSize="16sp" />
+
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/likeId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <ImageView
+                                android:id="@+id/like"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_like" />
+
+                            <TextView
+                                android:id="@+id/likeTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:drawablePadding="4dp"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/answerId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <ImageView
+                                android:id="@+id/answer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_comment"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/answerTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:drawablePadding="4dp"
+                                android:text=""
+                                android:textColor="@android:color/black" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/shareId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/share"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_share"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/shareTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:drawablePadding="4dp"
+                                android:text="5K"
+                                android:textColor="@android:color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:visibility="gone">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/unlikeId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="center|start"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/unLike"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_down" />
+
+                            <TextView
+                                android:id="@+id/unlikeTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:drawablePadding="4dp"
+                                android:gravity="center"
+                                android:text="1K"
+                                android:textColor="@android:color/black" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textin"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:actionBarSize"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="4dp"
+                        app:endIconCheckable="true"
+                        app:endIconDrawable="@drawable/ic_round_send_24"
+                        app:endIconMode="custom"
+                        app:endIconTint="#0D2EF4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/leaveAnAnswer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:hint="Add an answer" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/answersList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#CD221F1F"
+                android:orientation="vertical">
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/loading"
+                    style="@style/AVLoadingIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="12dp"
+                    app:indicatorColor="#FFFFFF"
+                    app:indicatorName="BallClipRotateMultipleIndicator" />
+
+                <TextView
+                    android:id="@+id/pls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="14dp"
+                    android:text="Please wait..."
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

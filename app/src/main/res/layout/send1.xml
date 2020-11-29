@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="end"
+    android:layout_margin="3dp"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="9.5"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_gravity="end"
+            android:background="@drawable/my_text_background"
+            android:gravity="end"
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Robert"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:visibility="gone"
+            android:gravity="end"
+            android:id="@+id/txtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:text="just now"
+            android:textColor="#5d5d5d"
+            android:textSize="16sp" />
+        <TextView
+            android:visibility="gone"
+            android:gravity="end"
+            android:id="@+id/txtSeen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:text="sent"
+            android:textColor="#5d5d5d"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

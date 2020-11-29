@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="2dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="2">
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/user_item_imageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_man"
+                app:civ_border_color="@color/colorAccent"
+                app:civ_border_width="1dp" />
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:elevation="6dp"
+                android:id="@+id/onlineImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="4dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/online"
+                app:civ_border_color="@color/place_holder"
+                app:civ_border_width="2dp"
+                tools:targetApi="lollipop" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/users_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="Some Name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+            <TextView
+                android:id="@+id/users_item_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:text="Hi there, I am creating this app for practice purpose. So that, you can support me to inspire" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/followButton"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="1.5"
+            android:src="@drawable/ic_follow" />
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
